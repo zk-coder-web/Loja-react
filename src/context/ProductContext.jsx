@@ -15,7 +15,6 @@ export const ProductProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [theme, setTheme] = useState("dark");
 
-  // 🔄 Tema escuro / claro
   useEffect(() => {
     if (theme === "dark") {
       document.body.classList.remove("bg-gray-100", "text-gray-900");
@@ -36,7 +35,6 @@ export const ProductProvider = ({ children }) => {
     setSelectedProduct(null);
   };
 
-  // 🔄 Navegação
   const navigateTo = (page) => {
     setCurrentPage(page);
     if (page === "products") {
@@ -45,7 +43,6 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // 🛒 Adicionar item ao carrinho
   const addToCart = (product, size = "Único", color = "Padrão") => {
     const existingItemIndex = cartItems.findIndex(
       (item) => item.id === product.id
@@ -63,7 +60,6 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // 🛒 Efeito de animação (opcional)
   const addToCartWithAnimation = (product, productRect) => {
     const cartIcon = document.getElementById("cart-icon");
     if (!cartIcon) {
@@ -115,7 +111,6 @@ export const ProductProvider = ({ children }) => {
     requestAnimationFrame(animate);
   };
 
-  // ➕➖ Atualizar quantidade
   const updateQuantity = (productId, size, color, newQuantity) => {
     setCartItems((prevItems) =>
       prevItems.map((item) =>
@@ -126,7 +121,6 @@ export const ProductProvider = ({ children }) => {
     );
   };
 
-  // 🗑 Remover item
   const removeFromCart = (productId, size, color) => {
     setCartItems((prevItems) =>
       prevItems.filter((item) => item.id !== productId)
@@ -135,7 +129,6 @@ export const ProductProvider = ({ children }) => {
 
   const clearCart = () => setCartItems([]);
 
-  // ❤️ Wishlist
   const addToWishlist = (product) => {
     if (!wishlist.some((item) => item.id === product.id)) {
       setWishlist((prev) => [...prev, product]);
@@ -146,20 +139,17 @@ export const ProductProvider = ({ children }) => {
     setWishlist((prev) => prev.filter((item) => item.id !== productId));
   };
 
-  // 👤 Autenticação fake
   const loginUser = () => setIsAuthenticated(true);
   const logoutUser = () => {
     setIsAuthenticated(false);
     navigateTo("products");
   };
 
-  // 🛒 Contagem de itens
   const cartItemCount = cartItems.reduce(
     (count, item) => count + item.quantity,
     0
   );
 
-  // 🔎 Filtros e busca
   const filteredProducts = useMemo(() => {
     let currentProducts = [...products];
     if (filterCategory !== "Todos") {
