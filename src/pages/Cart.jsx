@@ -64,7 +64,6 @@ const Cart = ({ darkMode }) => {
                   darkMode ? "border-gray-700" : "border-gray-200"
                 }`}
               >
-                {/* Produto */}
                 <div className="flex items-center flex-grow mb-4 sm:mb-0">
                   <img
                     src={item.image}
@@ -100,7 +99,6 @@ const Cart = ({ darkMode }) => {
                   </div>
                 </div>
 
-                {/* Controles */}
                 <div className="flex items-center space-x-6">
                   <div
                     className={`flex items-center rounded-full overflow-hidden shadow-inner border ${
@@ -182,7 +180,6 @@ const Cart = ({ darkMode }) => {
             ))}
           </div>
 
-          {/* Total */}
           <div
             className={`flex justify-between items-center text-3xl font-bold border-t pt-8 mt-8 ${
               darkMode
@@ -196,7 +193,6 @@ const Cart = ({ darkMode }) => {
             </span>
           </div>
 
-          {/* Botões */}
           <div className="mt-10 flex flex-col sm:flex-row justify-end gap-6">
             <button
               onClick={() => navigateTo("products")}

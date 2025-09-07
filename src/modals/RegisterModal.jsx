@@ -34,7 +34,6 @@ const RegisterModal = ({ onClose, onSwitchToLogin }) => {
     if (validateForm()) {
       setMessage("Cadastro simulado com sucesso!");
       setTimeout(onClose, 1000);
-      // Aqui você chamaria sua API real de registro
     } else {
       setMessage("Por favor, corrija os erros acima.");
     }

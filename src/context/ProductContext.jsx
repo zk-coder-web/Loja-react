@@ -13,11 +13,9 @@ export const ProductProvider = ({ children }) => {
   const [sortOption, setSortOption] = useState("default");
   const [wishlist, setWishlist] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [theme, setTheme] = useState("dark"); // Estado para o tema
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    // Aplica as classes do Tailwind ao body do documento
-    // com base no estado do tema.
     if (theme === "dark") {
       document.body.classList.remove("bg-gray-100", "text-gray-900");
       document.body.classList.add("bg-gray-900", "text-gray-100");
@@ -25,15 +23,15 @@ export const ProductProvider = ({ children }) => {
       document.body.classList.remove("bg-gray-900", "text-gray-100");
       document.body.classList.add("bg-gray-100", "text-gray-900");
     }
-  }, [theme]); // O efeito é executado sempre que o 'theme' muda
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
   const resetCheckout = () => {
-    setCartItems([]); // limpa o carrinho
-    setOrderConfirmed(false); // reseta confirmação de pedido
-    setSelectedProduct(null); // se você tiver produto selecionado
+    setCartItems([]);
+    setOrderConfirmed(false);
+    setSelectedProduct(null);
   };
 
   const navigateTo = (page) => {

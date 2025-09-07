@@ -133,7 +133,6 @@ const Checkout = () => {
       </button>
 
       <div className="bg-gray-100 rounded-2xl shadow-2xl p-4 sm:p-6 flex flex-col lg:flex-row gap-6 border border-gray-300">
-        {/* Formulário */}
         <div className="flex-1">
           <h3 className="text-2xl sm:text-3xl font-semibold mb-4 text-cyan-700">
             Informações de Entrega e Pagamento
@@ -177,7 +176,6 @@ const Checkout = () => {
               </div>
             ))}
 
-            {/* Método de pagamento */}
             <div>
               <label className="block text-black font-semibold text-sm mb-1">
                 Método de Pagamento
@@ -214,7 +212,6 @@ const Checkout = () => {
           </form>
         </div>
 
-        {/* Resumo do pedido */}
         <div className="lg:w-1/3 bg-white bg-opacity-95 rounded-2xl p-4 sm:p-6 shadow-xl text-black border border-cyan-300 flex flex-col gap-4">
           <h3 className="text-2xl sm:text-3xl font-semibold text-cyan-700 mb-4">
             Resumo do Pedido
